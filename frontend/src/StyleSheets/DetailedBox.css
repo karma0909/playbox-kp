@@ -1,0 +1,91 @@
+.detail_main
+{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: inherit;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    background-color: whitesmoke;
+    /* background-color: #ebe6e6; */
+}
+.detail_main_60{
+    width: 60%;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+}
+.detail_main_40{
+    width: 35%;    
+    /* justify-content: center; */
+    align-items: center;
+    display: grid;
+}
+.detail_boxName{
+    font-size: 1.5em;
+    font-weight: bolder;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+}
+.detail_images{
+    height: 31rem;
+    width: 47rem;
+}
+.carousel-control-next-icon{
+    background-image: url('../Images/icons8-next-page-48.png');
+    height: 3rem;
+    width: 3rem;
+}
+.carousel-control-prev-icon{
+    background-image: url('../Images/icons8-previous-page-48.png');
+    height: 3rem;
+    width: 3rem;
+}
+.carousel-control-next:focus, .carousel-control-next:hover, .carousel-control-prev:focus, .carousel-control-prev:hover {
+  background: none;
+}
+.detail_location{
+    font-size: inherit;
+    font-weight: inherit;
+    margin-top: .5rem;
+    margin-bottom: 0.5rem;
+}
+
+.detail_border{
+    border: solid ;
+    border-width: 1px;
+    padding: 1rem;
+    margin: 1rem;
+    --tw-border-opacity: 0.2;
+
+}
+.border_radius{
+    border-radius: 0.5rem;
+}
+.flex{
+    display: flex;
+}
+.grid{
+    display: grid;
+}
+.detail_fullwidth{
+    width: 100%;
+}
+.detail_color{
+    color: #8ac85e;
+}
+.detail_sports{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.detail_sports_img{
+    margin: 2rem;
+}
+.detail_sports_select{
+    border: solid #8ac85e;
+    border-radius: 50%;
+}

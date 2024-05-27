@@ -1,0 +1,1 @@
+const uri = 'mongodb+srv://kp2103:Abcd%401234@cluster1.2murfo5.mongodb.net/BaxCricket?retryWrites=true&w=majority';

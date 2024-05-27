@@ -1,0 +1,56 @@
+.fill {
+    background: #8ac85e;
+    color: #8ac85e;
+    filter: drop-shadow(0);
+    font-weight: bold;
+    transition: all .3s ease;
+    color: white;
+  }
+  .btn {
+    border: none;
+    padding: 12px 24px;
+    border-radius: 24px;
+    font-size: 12px;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+  }
+.label{
+    color: #8ac85e;
+    margin: 0;
+    font-size: x-large;
+    transition: 1s;
+}    
+.label:hover{
+  border-color: #5e63c8;
+  border-bottom-width:  6px;
+    transform: scale(.8);
+    transition: 1s all ;
+}
+.body{
+  transform-style: preserve-3d;
+  /* backface-visibility: visible; */
+  height: 25rem;
+  position: relative;
+}
+
+.front,.back{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  margin-bottom: 0;
+  -webkit-backface-visibility: hidden;
+}
+.front{
+  z-index: 1;
+  transform: rotateY('0deg');
+} 
+.back{
+    /* display: none; */
+    /* transform: rotateZ('0deg'); */
+    /* transform: rotateY(-180deg);  */
+    z-index: 0;
+
+    visibility: hidden;
+}

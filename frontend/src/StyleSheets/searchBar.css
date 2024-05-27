@@ -1,0 +1,36 @@
+.mainContainer{
+    height: 3em;
+    /* margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 2%; */
+    border-radius: 20rem;
+    display: flex;
+    /* background-color: black; */
+}
+.textBox{
+    width: 60%;
+    height: 100%;
+    color: #5cc412;
+    font-size: large;
+    border-top-left-radius: 20rem;
+    border-bottom-left-radius: 20rem ;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    border: none;
+}
+.button{
+    height: 100%;
+    width: 20%;
+    background: #5cc412;
+    color: white;
+    font-size: medium;
+    border-top-right-radius: 20rem;
+    border-bottom-right-radius: 20rem ;
+    border: none;
+}
+.sticky{
+    position: fixed;
+    top: 0%;
+    transition: 3s;
+    
+}

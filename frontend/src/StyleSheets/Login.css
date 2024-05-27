@@ -1,0 +1,46 @@
+.fill {
+    background: #8ac85e;
+    color: #8ac85e;
+    filter: drop-shadow(0);
+    font-weight: bold;
+    transition: all .3s ease;
+    color: white;
+  }
+  .btn {
+    border: none;
+    padding: 12px 24px;
+    border-radius: 24px;
+    font-size: 12px;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+  }
+.label{
+    color: #8ac85e;
+    margin: 0;
+    font-size: x-large;
+}    
+
+.body{
+  /* backface-visibility: visible; */
+  height: 23rem;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.front,.back{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  margin-bottom: 0;
+  -webkit-backface-visibility: hidden;
+}
+.front{
+
+}
+.back{
+    /* display: none; */
+    /* transform: rotateZ('0deg'); */
+    visibility: hidden;
+}

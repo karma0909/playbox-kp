@@ -1,0 +1,45 @@
+.mainContainer{  
+    justify-content: center; /* Horizontal centering */
+    align-items: center; /* Vertical centering */
+  
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    /* position: sticky; */
+}
+.textAddBox{
+    margin: 3%;
+    color: #8ac85e;
+    text-emphasis-color: #8ac85e;
+}
+.time{
+    color: #8ac85e;
+    font-size: 1.4rem;
+}
+.imgAddBox{
+    height: 3rem;
+    width: 3rem;
+    padding: 0rem;
+    /* border: solid 2px #8ac85e; */
+}
+.imgBorderAddBox{
+    border: solid #8ac85e 2.4px;
+    border-radius: 50px;
+}
+.day{
+    color: #8ac85e;
+    margin-left: 2%;
+    cursor: pointer;
+}
+/* .time::-webkit-datetime-edit-hour-field {
+    width: 64px;
+    height: 64px;
+    background: #8ac85e;
+    color: whitesmoke;
+}
+.time::after{
+    background-color: #8ac85e;
+} */
+.errorData{
+    border: solid 1px red;
+}
