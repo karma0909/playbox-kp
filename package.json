@@ -21,7 +21,9 @@
     "dayjs": "^1.11.11",
     "lottie-web": "^5.12.2",
     "nodemon": "^3.1.0",
+    "react-datepicker": "^6.9.0",
     "react-ios-time-picker": "^0.2.2",
+    "react-multi-date-picker": "^4.5.1",
     "tw-elements": "^2.0.0"
   }
 }

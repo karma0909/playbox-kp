@@ -89,3 +89,11 @@
     border: solid #8ac85e;
     border-radius: 50%;
 }
+.space-between{
+    justify-content: space-between;
+}
+.detail_center{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}

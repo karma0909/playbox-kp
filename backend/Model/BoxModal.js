@@ -49,4 +49,6 @@ const boxSchema = mongoose.Schema({
 
 const BoxModal = mongoose.model('BOX',boxSchema)
 
+
+
 export default BoxModal

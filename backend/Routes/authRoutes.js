@@ -6,6 +6,8 @@ import {addBoxController} from '../Controllers/addBoxController.js'
 import { getBoxesController } from '../Controllers/getBoxesController.js'
 
 import { getAllBoxesController} from '../Controllers/getAllBoxesController.js'
+import { bookASlotController } from '../Controllers/bookASlotController.js'
+import { updateTimeController } from '../Controllers/updateTimeController.js'
 const routes = Router()
 
 
@@ -30,4 +32,9 @@ routes.route('/addBox').post(addBoxController)
 routes.route('/getBoxes').post(getBoxesController)
 
 routes.route('/getAllBoxes').post(getAllBoxesController)
+
+routes.route('/bookASlot').post(bookASlotController)
+
+routes.route('/updateTime').post(updateTimeController)
+
 export default routes
