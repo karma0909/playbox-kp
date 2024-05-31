@@ -102,9 +102,9 @@ export default function Navbar() {
                         {/* <a href="#">SignUp/Login</a> */}
                     </li>
                     <li>
-                        <form class="form-inline my-2 my-lg-0">
-                            <input class="search" type="search" placeholder="Location" aria-label="Search" />
-                            <input type="button" class="btn my-2 my-sm-0" style={{backgroundColor:'#8ac85e', color:'white'}} value={'Search'}></input>
+                        <form className="form-inline my-2 my-lg-0">
+                            <input className="search" type="search" placeholder="Location" aria-label="Search" />
+                            <input type="button" className="btn my-2 my-sm-0" style={{backgroundColor:'#8ac85e', color:'white'}} value={'Search'}></input>
                             {/* <SearchBar></SearchBar> */}
                         </form>
                     </li>

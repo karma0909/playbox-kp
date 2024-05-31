@@ -2,12 +2,14 @@ import React, { useCallback, useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import './../StyleSheets/DetailedBox.css'
 // import DatePicker from "react-datepicker";
+import {useNavigate} from 'react-router-dom'
 
 export default function DetailedBox(props) {
 
   const location = useLocation()
   const box = location.state
   const dateObj = new Date()
+  const navigate = useNavigate()
 
 
   // states
@@ -40,8 +42,6 @@ export default function DetailedBox(props) {
 }
   useEffect(() => {
 
-
-    
     console.log(box)
     const dateObj = new Date()
     
@@ -59,6 +59,8 @@ export default function DetailedBox(props) {
     
     handleBooking('dayId',dateObj.getDay(),'dayId',false)
     
+    // handleBooking('boxName',box.boxName,'boxName',false)
+
     handleBooking('dayName',box.box[dateObj.getDay()].dayName,'dayName',false)
     
     handleBooking('boxId', box._id, 'boxId', false)
@@ -66,26 +68,25 @@ export default function DetailedBox(props) {
     
   }, [])
 
-
-
-  
-
   async function handleClick() {
 
     if (bookingInfo.sport && bookingInfo.time) {
       // handleBooking('timeId',bookingInfo.date + '_' + bookingInfo.time,'timeId',false)
-      const response = await fetch('/bookASlot', {
-        method: "POST",
-        headers: {
-          "Content-Type": 'application/json'
-        },
-        body: JSON.stringify(bookingInfo)
-      })
-      if (response.status === 308) {
-        const data = await response.json()
-        console.log('Data : ' + data.data)
-      }
+      // const response = await fetch('/bookASlot', {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": 'application/json'
+      //   },
+      //   body: JSON.stringify(bookingInfo)
+      // })
+      // if (response.status === 308) {
+      //   const data = await response.json()
+      //   console.log('Data : ' + data.data)
+      // }
       console.log(bookingInfo)
+
+      
+      navigate('/BookingInfo',{state : {...bookingInfo,boxName : box.boxName,boxAddress : box.boxAddress}})
     }
     else {
       alert('Please select a sport and time')
@@ -193,7 +194,8 @@ export default function DetailedBox(props) {
              setDate(date.toISOString().split('T')[0])
 
              await fetchData(date.toISOString().split('T')[0])
-
+             handleBooking('time', 0, 'time', false)
+ 
             console.log(date.toISOString().split('T')[0])
             
           }}></input>
@@ -218,16 +220,25 @@ export default function DetailedBox(props) {
         <div>
           <select className="form-select detail_fullwidth detail_center" aria-label="Default select example"
             onClick={(e) => {
-              handleBooking('time', e.target.value, 'time', false)
+              const selectedOption = e.target.options[e.target.selectedIndex];
+              if(e.target.value === 'disable')
+                handleBooking('time', 0, 'time', false)
+              else if(!selectedOption.disabled)
+                  handleBooking('time', e.target.value, 'time', false)
+              else
+                  handleBooking('time', 0, 'time', false)
+
             }}
           >
-
+            <option disabled={0} value={'disable'}>Select Time</option>
             {box.box[dayId].time.map((time) => {
               // const isBooked = bookedSlot.some(slot => slot.time === time.from + '-' + time.to)
 
               return (
-                <option disabled={bookedSlot.includes(time.from + '-' + time.to)}
-                  value={time.from + '-' + time.to} >{time.from + '-' + time.to}</option>
+                <option 
+                  style={bookedSlot.includes(time.from + '-' + time.to)?{cursor : 'not-allowed'}:null}
+                disabled={bookedSlot.includes(time.from + '-' + time.to)}
+                  value={time.from + '-' + time.to}>{bookedSlot.includes(time.from + '-' + time.to)?time.from + '-' + time.to + ' (NOT AVAILABLE) ':time.from + '-' + time.to}</option>
               )
             })}
 
@@ -236,7 +247,8 @@ export default function DetailedBox(props) {
 
         {/* button */}
 
-        <button onClick={() => { handleClick() }}>Book</button>
+        <button className="btn fill" style={{marginTop : '2rem'}}
+              onClick={handleClick}>Book</button>
 
       </div>
     </div>

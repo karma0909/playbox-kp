@@ -14,6 +14,8 @@ import UpdateBox from './UpdateBox'
 import IsUserLoggedIn from './IsUserLoggedIn'
 import Admin from './Admin'
 import DetailedBox from './DetailedBox'
+import BookingInfo from './BookingInfo'
+import SuccessfullPayment from './SuccessfullPayment'
 
 const userInfo = createContext(null)
 
@@ -88,6 +90,10 @@ return (
             <Route path='/UpdateBox' element={<UpdateBox isUpdate={false}></UpdateBox>}></Route>
             <Route path='/Admin' element={<Admin></Admin>}></Route>
             <Route path='/Details' element={<DetailedBox></DetailedBox>}></Route>
+
+            <Route path='/BookingInfo' element={<BookingInfo></BookingInfo>}></Route>
+
+            <Route path='/paymentsuccess' element={<SuccessfullPayment></SuccessfullPayment>}></Route>
           </Routes>
         </div>
       </div>

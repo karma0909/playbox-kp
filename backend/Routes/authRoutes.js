@@ -8,6 +8,7 @@ import { getBoxesController } from '../Controllers/getBoxesController.js'
 import { getAllBoxesController} from '../Controllers/getAllBoxesController.js'
 import { bookASlotController } from '../Controllers/bookASlotController.js'
 import { updateTimeController } from '../Controllers/updateTimeController.js'
+import { paymentController, paymentVerificationController } from '../Controllers/paymentController.js'
 const routes = Router()
 
 
@@ -36,5 +37,13 @@ routes.route('/getAllBoxes').post(getAllBoxesController)
 routes.route('/bookASlot').post(bookASlotController)
 
 routes.route('/updateTime').post(updateTimeController)
+
+routes.route('/makePayment').post(paymentController)
+
+routes.route('/verifyPayment').post(paymentVerificationController)
+
+routes.route('/getKey').post((req,res)=>{
+    return res.status(200).json({key : 'rzp_test_Dh2p3UmPTPpsJI'})
+})
 
 export default routes
